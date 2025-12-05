@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bandeja 1 Altair y Antares </title>
+  <title>Bandeja 1 Altair y Antares</title>
   <style>
     :root { color-scheme: light; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #ffffff; /* Fondo blanco */
-      color: #111827;      /* Texto oscuro */
+      background: #ffffff;
+      color: #111827;
       min-height: 100vh;
       display: grid;
       place-items: center;
@@ -30,7 +31,6 @@
     }
     button:hover { background: #f3f4f6; }
 
-    /* Thumbnails (previsualización) */
     .thumbnails {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -62,7 +62,6 @@
       user-select: none;
     }
 
-    /* Visor principal */
     .viewer {
       margin-top: 6px; display: grid; place-items: center;
       border-radius: 10px; overflow: hidden; background: #ffffff;
@@ -73,7 +72,7 @@
       height: auto;
       max-height: 70vh;
       object-fit: contain;
-      display: none; /* oculto hasta que elijas */
+      display: none;
     }
     .hint { font-size: 0.95rem; color: #6b7280; margin-top: 8px; text-align: center; }
   </style>
@@ -83,28 +82,24 @@
     <div class="header">
       <h1>Altair y Antares — Previsualización</h1>
       <div class="btns">
-        <!-- Uso onclick directo para evitar problemas con listeners -->
         <button onclick="mostrar('altair')">Altair</button>
         <button onclick="mostrar('antares')">Antares</button>
         <button onclick="ocultar()" title="Ocultar">Ocultar</button>
       </div>
     </div>
 
-    <!-- Previsualización (miniaturas) -->
     <section class="thumbnails" aria-label="Previsualización de imágenes">
       <div class="thumb" role="button" aria-label="Ver Altair" onclick="mostrar('altair')">
         <img
-         thubusercontent.com/adisenoOrt/QRPANACEA/027c71b01d0b8fddf3d776952c276a6eab656680/Bandeja%201%20Contenedor%201%20Instrumental.JPG
-        <div class="label">Altair</div>
-      </div>
+          src="https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/main/Bandeja%202%20Contenedor%201%20Instrumental.JPG"
+          alt="Altair    </div>
       <div class="thumb" role="button" aria-label="Ver Antares" onclick="mostrar('antares')">
         <img
-          src="https://raw.githubusercontent.com/adisenoOrt/QRPANACEA/main/Ensamble%20Bande.JPG
-        <div class="label">Antares</div>
+          src="https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/main/Ensamble%20Bandeja%202%20-%20Antares.JPG"
+         ares</div>
       </div>
     </section>
 
-    <!-- Visor principal (único <img>) -->
     <section class="viewer" aria-live="polite">
       <img id="viewer" alt="Visor de imagen" loading="eager"
            onerror="this.style.display='none'; document.getElementById('status').textContent='No se pudo cargar la imagen.';">
@@ -112,22 +107,21 @@
     </section>
   </main>
 
-  <!-- Script al final para evitar problemas de carga -->
   <script>
     const URLS = {
-      altair: "https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/refs/heads/main/Bandeja%202%20Contenedor%201%20Instrumental.JPG",
-      antares:"https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/refs/heads/main/Ensamble%20Bandeja%202%20-%20Antares.JPG"
+      altair: "https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/main/Bandeja%202%20Contenedor%201%20Instrumental.JPG",
+      antares: "https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/main/Ensamble%20Bandeja%202%20-%20Antares.JPG"
     };
 
-    function mostrar(estrella) 
+    function mostrar(estrella) {
       const viewer = document.getElementById('viewer');
       const status  = document.getElementById('status');
       const url = URLS[estrella];
 
       if (!url) return;
 
-      viewer.style.display = 'none';   // evita parpadeo
-      viewer.src = url;                // cambia la imagen
+      viewer.style.display = 'none';
+      viewer.src = url;
       viewer.onload = () => {
         viewer.style.display = 'block';
         status.textContent = (estrella === 'altair') ? 'Mostrando: Altair' : 'Mostrando: Antares';
