@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bandeja 2 Altair y Antares </title>
+  <title>Bandeja 1 Altair y Antares </title>
   <style>
     :root { color-scheme: light; }
     body {
@@ -115,8 +115,8 @@
   <!-- Script al final para evitar problemas de carga -->
   <script>
     const URLS = {
-      altair: "https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/refs/heads/main/Bandeja%202%20Contenedor%201%20Instrumental.JPG",
-      antares:https://raw.githubusercontent.com/adisenoOrt/Bandeja-2/refs/heads/main/Ensamble%20Bandeja%202%20-%20Antares.JPG"
+      altair: "https://raw.githubusercontent.com/adisenoOrt/QRPANACEA/027c71b01d0b8fddf3d776952c276a6eab656680/Bandeja%201%20Contenedor%201%20Instrumental.JPG",
+      antares:"https://raw.githubusercontent.com/adisenoOrt/QRPANACEA/main/Ensamble%20Bandeja%201%20-%20Antares.JPG"
     };
 
     function mostrar(estrella) {
